@@ -6,7 +6,6 @@ public class Wallet extends Payments{
 
     }
    double balance(){
-       System.out.println("You have a balance of $"+wall+" in your wallet");
        if(Payments.process==true) {
            wall = wall - rembal();
            System.out.println("Charges : " + rembal());

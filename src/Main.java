@@ -103,6 +103,10 @@ public class Main {
                     }
                     Payments payments=new Payments();
                     System.out.println("\n\n**********************\nTotal payment : "+payments.payment(timsItems, items)+"\n**********************");
+                    Wallet wallet=new Wallet();
+                    if(Payments.total > Wallet.wall)
+                    System.out.println("Insufficient funds");
+                    System.out.println("Balance : "+wallet.balance());
                     System.out.println("Proceeding with payment now ");
                     System.out.println("**********************");
                     System.out.println("Please enter your card no. : ");
@@ -114,16 +118,11 @@ public class Main {
                     ob.pin=sc.nextInt();
                     payments.check(ob.cardno, ob.date, ob.pin);
                     System.out.println("**********************");
-                    if(Payments.process==true)
-                    System.out.println("Transaction successful");
-                    else System.out.println("Transaction failed");
-                    System.out.println("**********************");
-                    Wallet wallet=new Wallet();
-                    if(Payments.total > Wallet.wall)
-                        System.out.println("Insufficient funds");
-                    else {
-                        System.out.println("Balance : "+wallet.balance());
+                    if(Payments.process==true) {
+                        System.out.println("Transaction successful");
                     }
+                    else{ System.out.println("Transaction failed");}
+                    System.out.println("**********************");
                     break;
                 default:
                     System.out.println("Invalid Input\nPlease try again");

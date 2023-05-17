@@ -29,13 +29,14 @@ public class Payments extends Card{
     }
 
 void check(String cardno, String date, int pin){
-    for (int i = 0; i <=3 ; i++) {
-        if ((valueOf(this.cd[i].cardno).equals(cardno)) && ((valueOf(this.cd[i].date)).equals(date)) &&(this.cd[i].pin== pin)&&(process=false))
-        {process=true;}
-        else
-            process=false;
-    }
-
+        for (int i = 0; i <=3 ; i++) {
+            if (process == false) {
+                if ((valueOf(this.cd[i].cardno).equals(cardno)) && ((valueOf(this.cd[i].date)).equals(date)) && (this.cd[i].pin == pin))
+                    process = true;
+                else
+                    process = false;
+            }
+        }
 
 }
 }
