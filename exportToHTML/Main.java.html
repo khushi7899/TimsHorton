@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6897bb;}
+.s3 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">Main {</span>
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s1">TimsItems[] timsItems = </span><span class="s0">new </span><span class="s1">TimsItems[</span><span class="s2">100</span><span class="s1">]</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">choice</span><span class="s0">, </span><span class="s1">ordercounter</span><span class="s0">;</span>
+        <span class="s1">choice = </span><span class="s2">1</span><span class="s0">;</span>
+        <span class="s1">ordercounter = </span><span class="s2">0</span><span class="s0">;</span>
+        <span class="s1">Scanner sc = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Welcome to Tim Hortons&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">while </span><span class="s1">(choice==</span><span class="s2">1</span><span class="s1">||choice==</span><span class="s2">2</span><span class="s1">) {</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Enter </span><span class="s0">\n</span><span class="s3">1. Merchandise</span><span class="s0">\n</span><span class="s3">2. Consumables</span><span class="s0">\n</span><span class="s3">3. Checkout&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">choice = sc.nextInt()</span><span class="s0">;</span>
+            <span class="s0">switch </span><span class="s1">(choice)</span>
+            <span class="s1">{</span>
+                <span class="s0">case </span><span class="s2">1</span><span class="s1">:</span>
+                    <span class="s1">System.out.println(</span><span class="s3">&quot;</span><span class="s0">\n\n</span><span class="s3">1. Mug</span><span class="s0">\n</span><span class="s3">2. Coffee Powder</span><span class="s0">\n</span><span class="s3">3. Gift Card</span><span class="s0">\n</span><span class="s3">4. Hockey Card&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">choice = sc.nextInt()</span><span class="s0">;</span>
+                    <span class="s0">if </span><span class="s1">(choice == </span><span class="s2">1</span><span class="s1">) {</span>
+                        <span class="s1">Mugs mugs = </span><span class="s0">new </span><span class="s1">Mugs()</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(mugs)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s3">&quot;1. Order this</span><span class="s0">\n</span><span class="s3">2. Choose again</span><span class="s0">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">choice = sc.nextInt()</span><span class="s0">;</span>
+                        <span class="s0">if </span><span class="s1">(choice == </span><span class="s2">1</span><span class="s1">)</span>
+                            <span class="s1">timsItems[ordercounter++] = mugs</span><span class="s0">;</span>
+                    <span class="s1">}</span>
+                    <span class="s0">else if </span><span class="s1">(choice == </span><span class="s2">2</span><span class="s1">) {</span>
+                        <span class="s1">CoffeePowder coffeePowder = </span><span class="s0">new </span><span class="s1">CoffeePowder()</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(coffeePowder.toString())</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s3">&quot;1. Order this</span><span class="s0">\n</span><span class="s3">2. Choose again</span><span class="s0">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">choice = sc.nextInt()</span><span class="s0">;</span>
+                        <span class="s0">if </span><span class="s1">(choice == </span><span class="s2">1</span><span class="s1">)</span>
+                            <span class="s1">timsItems[ordercounter++] = coffeePowder</span><span class="s0">;</span>
+                    <span class="s1">}</span>
+                    <span class="s0">else if </span><span class="s1">(choice == </span><span class="s2">3</span><span class="s1">) {</span>
+                        <span class="s1">GiftCards giftCards = </span><span class="s0">new </span><span class="s1">GiftCards()</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(giftCards.toString())</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s3">&quot;1. Order this</span><span class="s0">\n</span><span class="s3">2. Choose again</span><span class="s0">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">choice = sc.nextInt()</span><span class="s0">;</span>
+                        <span class="s0">if </span><span class="s1">(choice == </span><span class="s2">1</span><span class="s1">)</span>
+                            <span class="s1">timsItems[ordercounter++] = giftCards</span><span class="s0">;</span>
+
+                    <span class="s1">}</span>
+                    <span class="s0">else if </span><span class="s1">(choice == </span><span class="s2">4</span><span class="s1">) {</span>
+                        <span class="s1">HockeyCards hockeyCards=</span><span class="s0">new </span><span class="s1">HockeyCards()</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(hockeyCards.toString())</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s3">&quot;1. Order this</span><span class="s0">\n</span><span class="s3">2. Choose again</span><span class="s0">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">choice = sc.nextInt()</span><span class="s0">;</span>
+                        <span class="s0">if </span><span class="s1">(choice == </span><span class="s2">1</span><span class="s1">)</span>
+                            <span class="s1">timsItems[ordercounter++] = hockeyCards</span><span class="s0">;</span>
+                    <span class="s1">}</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">2</span><span class="s1">:</span>
+                    <span class="s1">System.out.println(</span><span class="s3">&quot;</span><span class="s0">\n\n</span><span class="s3">1. Donut</span><span class="s0">\n</span><span class="s3">2. Bagel</span><span class="s0">\n</span><span class="s3">3. Coffee</span><span class="s0">\n</span><span class="s3">4. Wrap</span><span class="s0">\n</span><span class="s3">5. Sandwich&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">choice = sc.nextInt()</span><span class="s0">;</span>
+                    <span class="s0">if </span><span class="s1">(choice == </span><span class="s2">1</span><span class="s1">) {</span>
+                    <span class="s1">Donut donut=</span><span class="s0">new </span><span class="s1">Donut()</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(donut.toString())</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s3">&quot;1. Order this</span><span class="s0">\n</span><span class="s3">2. Choose again</span><span class="s0">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">choice = sc.nextInt()</span><span class="s0">;</span>
+                    <span class="s0">if </span><span class="s1">(choice == </span><span class="s2">1</span><span class="s1">)</span>
+                        <span class="s1">timsItems[ordercounter++] = donut</span><span class="s0">;</span>
+                    <span class="s1">}</span>
+                    <span class="s0">else if </span><span class="s1">(choice == </span><span class="s2">2</span><span class="s1">) {</span>
+                        <span class="s1">Bagel bagel=</span><span class="s0">new </span><span class="s1">Bagel()</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(bagel.toString())</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s3">&quot;1. Order this</span><span class="s0">\n</span><span class="s3">2. Choose again</span><span class="s0">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">choice = sc.nextInt()</span><span class="s0">;</span>
+                        <span class="s0">if </span><span class="s1">(choice == </span><span class="s2">1</span><span class="s1">)</span>
+                            <span class="s1">timsItems[ordercounter++] = bagel</span><span class="s0">;</span>
+                    <span class="s1">}</span>
+                    <span class="s0">else if </span><span class="s1">(choice == </span><span class="s2">3</span><span class="s1">) {</span>
+                        <span class="s1">Coffee coffee = </span><span class="s0">new </span><span class="s1">Coffee()</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(coffee.toString())</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s3">&quot;1. Order this</span><span class="s0">\n</span><span class="s3">2. Choose again</span><span class="s0">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">choice = sc.nextInt()</span><span class="s0">;</span>
+                        <span class="s0">if </span><span class="s1">(choice == </span><span class="s2">1</span><span class="s1">)</span>
+                            <span class="s1">timsItems[ordercounter++] = coffee</span><span class="s0">;</span>
+                    <span class="s1">}</span>
+                    <span class="s0">else if </span><span class="s1">(choice == </span><span class="s2">4</span><span class="s1">) {</span>
+                        <span class="s1">Wrap wrap=</span><span class="s0">new </span><span class="s1">Wrap()</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(wrap.toString())</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s3">&quot;1. Order this</span><span class="s0">\n</span><span class="s3">2. Choose again</span><span class="s0">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">choice = sc.nextInt()</span><span class="s0">;</span>
+                        <span class="s0">if </span><span class="s1">(choice == </span><span class="s2">1</span><span class="s1">)</span>
+                            <span class="s1">timsItems[ordercounter++] = wrap</span><span class="s0">;</span>
+                    <span class="s1">}</span>
+                    <span class="s0">else if </span><span class="s1">(choice == </span><span class="s2">5</span><span class="s1">) {</span>
+                        <span class="s1">Sandwich sandwich=</span><span class="s0">new </span><span class="s1">Sandwich()</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(sandwich.toString())</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(</span><span class="s3">&quot;1. Order this</span><span class="s0">\n</span><span class="s3">2. Choose again</span><span class="s0">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">choice = sc.nextInt()</span><span class="s0">;</span>
+                        <span class="s0">if </span><span class="s1">(choice == </span><span class="s2">1</span><span class="s1">)</span>
+                            <span class="s1">timsItems[ordercounter++] = sandwich</span><span class="s0">;</span>
+                    <span class="s1">}</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s2">3</span><span class="s1">:</span>
+                    <span class="s0">int </span><span class="s1">items=ordercounter</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s3">&quot;**********************</span><span class="s0">\n\n</span><span class="s3">Total Items ordered: &quot;</span><span class="s1">+items+</span><span class="s3">&quot;</span><span class="s0">\n\n</span><span class="s3">**********************&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s2">0</span><span class="s0">; </span><span class="s1">i &lt;items </span><span class="s0">; </span><span class="s1">i++) {</span>
+                        <span class="s1">System.out.println(</span><span class="s3">&quot;**********************&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                        <span class="s1">System.out.println(timsItems[i].toString())</span><span class="s0">;</span>
+                    <span class="s1">}</span>
+                    <span class="s1">Payments payments=</span><span class="s0">new </span><span class="s1">Payments()</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s3">&quot;</span><span class="s0">\n\n</span><span class="s3">**********************</span><span class="s0">\n</span><span class="s3">Total payment : &quot;</span><span class="s1">+payments.payment(timsItems</span><span class="s0">, </span><span class="s1">items)+</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">**********************&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s3">&quot;Proceeding with payment now &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s3">&quot;**********************&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s3">&quot;Please enter your card no. : &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">Card ob=</span><span class="s0">new </span><span class="s1">Card()</span><span class="s0">;</span>
+                    <span class="s1">ob.cardno=sc.next()</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s3">&quot;Please enter your date of birth in dd/mm format : &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">ob.date=sc.next()</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s3">&quot;Please enter your pin no. : &quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">ob.pin=sc.nextInt()</span><span class="s0">;</span>
+                    <span class="s1">payments.check(ob.cardno</span><span class="s0">, </span><span class="s1">ob.date</span><span class="s0">, </span><span class="s1">ob.pin)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s3">&quot;**********************&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s0">if</span><span class="s1">(Payments.process==</span><span class="s0">true</span><span class="s1">)</span>
+                    <span class="s1">System.out.println(</span><span class="s3">&quot;Transaction successful&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s0">else </span><span class="s1">System.out.println(</span><span class="s3">&quot;Transaction failed&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s3">&quot;**********************&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">Wallet wallet=</span><span class="s0">new </span><span class="s1">Wallet()</span><span class="s0">;</span>
+                    <span class="s0">if</span><span class="s1">(Payments.total &gt; Wallet.wall)</span>
+                        <span class="s1">System.out.println(</span><span class="s3">&quot;Insufficient funds&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s0">else </span><span class="s1">{</span>
+                        <span class="s1">System.out.println(</span><span class="s3">&quot;Balance : &quot;</span><span class="s1">+wallet.balance())</span><span class="s0">;</span>
+                    <span class="s1">}</span>
+                    <span class="s0">break;</span>
+                <span class="s0">default</span><span class="s1">:</span>
+                    <span class="s1">System.out.println(</span><span class="s3">&quot;Invalid Input</span><span class="s0">\n</span><span class="s3">Please try again&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>
